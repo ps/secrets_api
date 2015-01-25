@@ -36,7 +36,7 @@ could have been added on the client side which would add complexity to the hash 
 
 
 Another possible improvement for this would be to write my own implementation of HTTP Digest authentication
-so that way I would have more control over it.
+so that way I could add additional factors to it.
 
 
 A different approach to this solution could have been basic HTTP authentication over SSL. With this approach 
