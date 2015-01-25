@@ -140,16 +140,3 @@ def get_all_secrets(username):
 	if trans:
 		return trans["secrets"]
 	return False
-
-
-
-_insert_user('test-user', 'pa$$w0rd')
-# user = get_user_ha1_password("pawel")
-# #print get_user_secret("pawel",1)
-# #insert_secret('pawel', 'hahahah3454')
-# print get_all_secrets('pawel')
-# print update_secret('pawel', 1, 'czesc')
-# print update_secret('pawel', 123123123123, 'asdfasdf')
-# print delete_secret('pawel',1)
-# print delete_secret('pawel',4)
-# print get_all_secrets('pawel')
