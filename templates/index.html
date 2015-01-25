@@ -1,0 +1,12 @@
+<h1>User secrets storage API</h1>
+<h3>Valid routes:</h3>
+<ul>
+<li>/add/&#60;secret&#62; (addes a secret for authenticated user)</li>
+<li>/view/ (displays all secrets for authenticated user)</li>
+<li>/delete/&#60;secret_id&#62; (deletes a secret with specified id for authenticated user)</li>
+<li>/update/&#60;secret_id&#62;/&#60;new_secret&#62; (updates a secret with specified id and specified new secret for authenticated user)</li>
+</ul>
+
+<h3>HTTP Digest Authentication Python Example:</h3>
+url = 'http://api.pawel.pw/view/' <br>
+r = requests.get(url, auth=HTTPDigestAuth(&#60;auth_user&#62;,&#60;password&#62;)) <br>
