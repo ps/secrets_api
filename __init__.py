@@ -28,7 +28,7 @@ def add_secret(secret):
 @auth.login_required
 def view_secret():
     secrets = get_all_secrets(auth.username())
-    if secrets is None or secrets == False:
+    if secrets is None or secrets == False or not any(secrets):
         return "VIEW: There are no secrets present."
     out = ""
     for key, value in secrets.iteritems():
