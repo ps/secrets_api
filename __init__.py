@@ -21,15 +21,15 @@ def main_page():
 @auth.login_required
 def add_secret(secret):
     if insert_secret(auth.username(), secret):
-        return "Secret added!"
-    return "There was an error adding a secret."
+        return "ADD: Secret added!"
+    return "ADD: There was an error adding a secret."
 
 @app.route("/view/")
 @auth.login_required
 def view_secret():
     secrets = get_all_secrets(auth.username())
-    if secrets is None:
-        return "There are no secrets present."
+    if secrets is None or secrets == False:
+        return "VIEW: There are no secrets present."
     out = ""
     for key, value in secrets.iteritems():
         out += "%s: '%s'\n" % (key, value)
@@ -39,15 +39,15 @@ def view_secret():
 @auth.login_required
 def delete_secret_point(secret_id):
     if delete_secret(auth.username(), secret_id):
-        return "Secret deleted!"
-    return "The specified secret id does not exist!"
+        return "DELETE: Secret deleted!"
+    return "DELETE: The specified secret id does not exist!"
 
 @app.route("/update/<secret_id>/<new_secret>")
 @auth.login_required
 def update_secret_point(secret_id, new_secret):
     if update_secret(auth.username(), secret_id, new_secret):
-        return "Secret '%s' updated!" % secret_id
-    return "Secret could not be updated."
+        return "DELETE: Secret '%s' updated!" % secret_id
+    return "DELETE: Secret could not be updated."
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
